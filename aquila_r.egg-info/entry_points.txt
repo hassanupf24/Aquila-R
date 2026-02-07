@@ -1,0 +1,2 @@
+[console_scripts]
+aquila-r = aquila_r.cli:main

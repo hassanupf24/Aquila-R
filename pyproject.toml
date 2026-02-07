@@ -1,0 +1,101 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aquila-r"
+version = "1.0.0"
+description = "Aquila-R: Autonomous Bilingual Research Intelligence - A rigorous research agent for English and Arabic"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Aquila-R Team"}
+]
+keywords = [
+    "research",
+    "ai-agent",
+    "bilingual",
+    "arabic",
+    "english",
+    "academic",
+    "methodology",
+    "analysis"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+    "Natural Language :: Arabic",
+    "Natural Language :: English",
+]
+
+dependencies = [
+    "pydantic>=2.0.0",
+    "rich>=13.0.0",
+    "httpx>=0.25.0",
+    "PyYAML>=6.0",
+    "python-dotenv>=1.0.0",
+    "tiktoken>=0.5.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "tenacity>=8.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.0.0",
+    "mypy>=1.0.0",
+    "ruff>=0.1.0",
+    "black>=23.0.0",
+]
+llm = [
+    "openai>=1.0.0",
+    "anthropic>=0.7.0",
+    "google-generativeai>=0.3.0",
+]
+tools = [
+    "arxiv>=2.0.0",
+    "scholarly>=1.7.0",
+    "PyPDF2>=3.0.0",
+    "pdfplumber>=0.10.0",
+]
+
+[project.scripts]
+aquila-r = "aquila_r.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/aquila-r/aquila-r"
+Documentation = "https://aquila-r.readthedocs.io"
+Repository = "https://github.com/aquila-r/aquila-r"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["aquila_r*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "D", "UP", "B", "C4", "SIM"]
+ignore = ["D100", "D104", "D107"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "-v --cov=aquila_r --cov-report=term-missing"
