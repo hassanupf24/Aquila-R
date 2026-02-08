@@ -44,8 +44,8 @@ Aquila-R is built on a modular architecture:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/aquila-r.git
-    cd aquila-r
+    git clone https://github.com/hassanupf24/Aquila-R.git
+    cd Aquila-R
     ```
 
 2.  **Install dependencies:**

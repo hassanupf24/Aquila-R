@@ -73,9 +73,9 @@ tools = [
 aquila-r = "aquila_r.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/aquila-r/aquila-r"
-Documentation = "https://aquila-r.readthedocs.io"
-Repository = "https://github.com/aquila-r/aquila-r"
+Homepage = "https://github.com/hassanupf24/Aquila-R"
+Documentation = "https://github.com/hassanupf24/Aquila-R#readme"
+Repository = "https://github.com/hassanupf24/Aquila-R"
 
 [tool.setuptools.packages.find]
 where = ["."]
